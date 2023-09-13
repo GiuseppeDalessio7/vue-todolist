@@ -17,6 +17,7 @@
             <div class="container p-3 text-center ">
                 <input v-model="newtask" type="text" class="m-3">
                 <button @click="addtask">Clicca per aggiungere</button>
+               
             </div>
 
            
@@ -24,11 +25,11 @@
                 <h1>Lista delle cose da fare</h1>
                 <ol v-if="todos.length > 0" class="list-group list-group-numbered d-flex"> 
                     <li v-for="(todo,index) in todos" :key="todo.id"class="list-group-item">
-   
+                        
                         <span v-if="todo.done">{{todo.text}} </span>
                         <span v-else="todo.done" style="text-decoration: line-through">{{todo.text}} </span> <i class="fa-solid fa-xmark" @click="removetodo()" style="color: #005eff;"></i>
                     </li>
-                    <!-- <li class="list-group-item"></li> -->
+                    <li class="list-group-item">{{newtask}}</li>
                     <!-- <li class="list-group-item"></li> -->
                 </ol>
                 <p v-else>Siamo a secco di Task</p>
