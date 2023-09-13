@@ -34,8 +34,15 @@ createApp({
           if(this.newTask != ""){
            
           }  
+        },
+
+        //funzione elimina che elimina il todo
+        removetodo(index){
+        {
+        this.todos.splice(index, 1);
         }
     }
+}
 }).mount('#app')
 
 
