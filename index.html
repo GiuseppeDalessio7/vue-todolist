@@ -16,7 +16,7 @@
         <div id="app">
             <div class="container p-3 text-center ">
                 <input v-model="newtask" type="text" class="m-3">
-                <button @click="addtask">Clicca per aggiungere</button>
+                <button @click="addTask">Clicca per aggiungere</button>
                
             </div>
 
@@ -29,7 +29,7 @@
                         <span v-if="todo.done">{{todo.text}} </span>
                         <span v-else="todo.done" style="text-decoration: line-through">{{todo.text}} </span> <i class="fa-solid fa-xmark" @click="removetodo()" style="color: #005eff;"></i>
                     </li>
-                    <li class="list-group-item">{{newtask}}</li>
+                    <!-- <li class="list-group-item">{{newtask}}</li> -->
                     <!-- <li class="list-group-item"></li> -->
                 </ol>
                 <p v-else>Siamo a secco di Task</p>

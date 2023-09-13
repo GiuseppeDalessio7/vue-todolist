@@ -5,8 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            newtask :"",
-            messggio:"",
+            newtask: "",
             todos: [
                 {
                     text: "Fare la spesa",
@@ -27,27 +26,32 @@ createApp({
                     done: false,
                 },
                 // {
-                    // text: "leggere un libro",
-                    // done: true,
+                // text: "leggere un libro",
+                // done: true,
                 // },
             ]
         }
     },
 
     methods: {
-        addTask(){
-            if(this.newtask === this.newtask)
-         todos.text.push(todo.done)
-          
+        addTask() {
+            if (this.newtask != "") {
+                let taskobj = {
+                    text : this.newtask,
+                    done : true,   
+                }
+
+                this.todos.push(taskobj)
+            }
         },
 
         //funzione elimina che elimina il todo
-        removetodo(index){
-        {
-        this.todos.splice(index, 1);
+        removetodo(index) {
+            {
+                this.todos.splice(index, 1);
+            }
         }
     }
-}
 }).mount('#app')
 
 
