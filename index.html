@@ -9,25 +9,30 @@
             rel="stylesheet"
             integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
             crossorigin="anonymous">
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     </head>
     <body>
 
         <div id="app">
             <div class="container p-3 text-center ">
-                <input v-model="newtask" type="text" class="m-3">
+                <input v-model="newtask" type="text" class="m-3" @keyup.enter="addTask">
                 <button @click="addTask">Clicca per aggiungere</button>
-               
+
             </div>
 
-           
             <div class="container">
                 <h1>Lista delle cose da fare</h1>
-                <ol v-if="todos.length > 0" class="list-group list-group-numbered d-flex"> 
-                    <li v-for="(todo,index) in todos" :key="todo.id"class="list-group-item">
-                        
-                        <span v-if="todo.done">{{todo.text}} </span>
-                        <span v-else="todo.done" style="text-decoration: line-through">{{todo.text}} </span> <i class="fa-solid fa-xmark" @click="removetodo()" style="color: #005eff;"></i>
+                <ol v-if="todos.length > 0"
+                    class="list-group list-group-numbered d-flex">
+                    <li v-for="(todo,index) in todos" :key="todo.id"
+                        class="list-group-item">
+
+                        <span v-if="todo.done" @click="todo.done = !todo.done">{{todo.text}} </span>
+                        <span v-else="todo.done"
+                            style="text-decoration: line-through" @click="todo.done = !todo.done" >{{todo.text}}
+                        </span> <i class="fa-solid fa-xmark"
+                            @click="removetodo()" style="color: #005eff;"></i>
                     </li>
                     <!-- <li class="list-group-item">{{newtask}}</li> -->
                     <!-- <li class="list-group-item"></li> -->
@@ -41,5 +46,3 @@
         <script src="./assets/js/myscript.js"></script>
     </body>
 </html>
-
-

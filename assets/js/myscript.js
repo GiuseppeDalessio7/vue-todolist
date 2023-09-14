@@ -25,10 +25,10 @@ createApp({
                     text: "Non imparare il vuejs",
                     done: false,
                 },
-                // {
-                // text: "leggere un libro",
-                // done: true,
-                // },
+               
+               
+               
+               
             ]
         }
     },
@@ -41,7 +41,7 @@ createApp({
                     done : true,   
                 }
 
-                this.todos.push(taskobj)
+                this.todos.unshift(taskobj)
             }
         },
 
